@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum SMM - Elite Social Media Acceleration Hub</title>
+    <meta name="description" content="Access the definitive SMM hub. Quantum SMM delivers unparalleled speed, quality, direct ordering, and advanced features for dominating social platforms.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><defs><linearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22><stop offset=%220%25%22 style=%22stop-color:%2300f0ff;stop-opacity:1%22 /><stop offset=%22100%25%22 style=%22stop-color:%23a855f7;stop-opacity:1%22 /></linearGradient></defs><path fill=%22url(%23g)%22 d=%22M50 0L61.8 38.2L100 38.2L69.1 61.8L80.9 100L50 76.4L19.1 100L30.9 61.8L0 38.2L38.2 38.2Z%22 /></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --bg-dark-primary: #080d14;
+            --bg-dark-secondary: #101522;
+            --bg-dark-tertiary: #1a202c;
+            --accent-cyan: #00e5ff;
+            --accent-purple: #b367ff;
+            --accent-indigo: #7076ff;
+            --accent-green: #14f195;
+            --accent-pink: #ff55a5;
+            --text-light: #f0f4f8;
+            --text-medium: #a0aec0;
+            --text-dark: var(--bg-dark-primary);
+            --border-color: rgba(55, 65, 81, 0.5);
+            --border-accent: rgba(0, 229, 255, 0.4);
+            --glow-cyan: 0 0 18px rgba(0, 229, 255, 0.45), 0 0 6px rgba(0, 229, 255, 0.7);
+            --glow-purple: 0 0 18px rgba(179, 103, 255, 0.45), 0 0 6px rgba(179, 103, 255, 0.7);
+            --gradient-tech: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            --gradient-button: linear-gradient(90deg, var(--accent-indigo), var(--accent-purple));
+            --gradient-dark-card: linear-gradient(145deg, rgba(17, 21, 34, 0.7), rgba(26, 32, 44, 0.85)); /* Slightly adjusted */
+            --gradient-support: linear-gradient(45deg, var(--accent-cyan), var(--accent-pink));
+
+            --shadow-glow-sm: 0 0 10px rgba(0, 229, 255, 0.25);
+            --shadow-glow-md: 0 0 18px rgba(179, 103, 255, 0.3);
+            --shadow-glow-lg: 0 0 30px rgba(112, 118, 255, 0.35);
+            --shadow-dark-soft: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+            --border-radius: 12px;
+            --transition-speed: 0.35s;
+            --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --transition-smooth: cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Reset and Base Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-light); background-color: var(--bg-dark-primary);
+            background-image:
+                radial-gradient(rgba(26, 32, 44, 0.6) 0.7px, transparent 0.7px),
+                radial-gradient(rgba(26, 32, 44, 0.6) 0.7px, transparent 0.7px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            line-height: 1.7; overflow-x: hidden;
+            position: relative;
+        }
+        body.mobile-menu-active {
+             overflow: hidden; /* Prevent body scroll when mobile menu is open */
+        }
+
+        /* --- Utilities --- */
+        .container { max-width: 1300px; width: 100%; margin: 0 auto; padding: 0 1.5rem; }
+        .section { padding: 6rem 0; position: relative; overflow: hidden; }
+        .section-bg-secondary {
+            background-color: var(--bg-dark-secondary);
+            background-image:
+              linear-gradient(rgba(8, 13, 20, 0.9), rgba(8, 13, 20, 0.95)),
+              linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: cover, 35px 35px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .section-title {
+            text-align: center; margin-bottom: 4.5rem; font-size: 3rem;
+            font-weight: 700; color: var(--text-light); position: relative; padding-bottom: 1.5rem; letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .section-title::before {
+            content: ''; position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            width: 120px; height: 3px; background: var(--gradient-tech); opacity: 0.4; border-radius: 2px;
+        }
+        .section-title::after {
+            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 140px; height: 5px; background: var(--gradient-tech); border-radius: 3px; box-shadow: var(--glow-cyan);
+            animation: pulse-glow 3s infinite ease-in-out;
+        }
+        .btn {
+            display: inline-block; padding: 1rem 2.2rem; border-radius: var(--border-radius); font-weight: 600;
+            text-decoration: none; transition: all var(--transition-speed) var(--transition-smooth); cursor: pointer;
+            border: 2px solid transparent; font-size: 1rem; position: relative; overflow: hidden; z-index: 1;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .btn::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left var(--transition-speed) ease-out; z-index: -1;
+        }
+        .btn:hover::before { left: 100%; }
+        .btn-primary { background: var(--gradient-button); color: var(--text-light); box-shadow: var(--shadow-glow-md), 0 4px 10px rgba(0,0,0,0.3); }
+        .btn-primary:hover { transform: translateY(-5px) scale(1.05); box-shadow: var(--shadow-glow-lg), 0 10px 20px rgba(0,0,0,0.4); filter: brightness(1.25); }
+        .btn-secondary { background-color: transparent; color: var(--accent-cyan); border-color: var(--accent-cyan); box-shadow: var(--shadow-glow-sm); }
+        .btn-secondary:hover { background-color: var(--accent-cyan); color: var(--bg-dark-primary); box-shadow: var(--glow-cyan), 0 4px 10px rgba(0, 229, 255, 0.2); transform: translateY(-3px) scale(1.03); }
+
+        .grid { display: grid; gap: 2.5rem; }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+        .grid-5 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+
+        /* --- Animations --- */
+        @keyframes pulse-glow { 0%, 100% { box-shadow: var(--glow-cyan); opacity: 0.8; } 50% { box-shadow: 0 0 28px rgba(0, 229, 255, 0.7); opacity: 1; } }
+        @keyframes subtle-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        @keyframes background-pan { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        @keyframes beam-scan { 0% { transform: translateX(-50%) scaleX(0.1); opacity: 0.2;} 50% { transform: translateX(-50%) scaleX(1); opacity: 0.6; } 100% { transform: translateX(-50%) scaleX(0.1); opacity: 0.2;} }
+        @keyframes pulse-support { 0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(0, 229, 255, 0.4); } 50% { transform: scale(1.08); box-shadow: 0 0 25px rgba(0, 229, 255, 0.7); } }
+        @keyframes slide-in-left { from { transform: translateX(-110%); opacity: 0; } to { transform: translateX(0); opacity: 1; } } /* Adjusted start */
+        @keyframes slide-out-left { from { transform: translateX(0); opacity: 1; } to { transform: translateX(-110%); opacity: 0; } } /* Adjusted end */
+
+        .animated-element { opacity: 0; transform: translateY(60px); transition: opacity 0.9s ease-out, transform 0.9s var(--transition-bounce); }
+        .animated-element.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; } .delay-5 { transition-delay: 0.5s; } .delay-6 { transition-delay: 0.6s; }
+        .delay-7 { transition-delay: 0.7s; } .delay-8 { transition-delay: 0.8s; } .delay-9 { transition-delay: 0.9s; }
+
+        /* --- Header & Navigation --- */
+        #main-header {
+            background-color: rgba(8, 13, 20, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px); padding: 1rem 0; position: sticky;
+            top: 0; left:0; right: 0; width: 100%; /* Ensure full width */
+            z-index: 1000; border-bottom: 1px solid var(--border-color);
+            transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-top-color var(--transition-speed) ease, padding var(--transition-speed) ease;
+            border-top: 3px solid transparent;
+        }
+        #main-header.scrolled {
+            background-color: rgba(8, 13, 20, 0.97);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border-bottom-color: rgba(55, 65, 81, 0.7);
+            border-top: 3px solid var(--accent-cyan);
+            padding: 0.8rem 0;
+        }
+        /* Container inside header needs width too */
+        #main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #navbar { /* Remove container class from navbar itself */
+            display: flex; /* Already set by container */
+            justify-content: space-between;
+            align-items: center;
+            width: 100%; /* Take full width of container */
+        }
+        #navbar .logo {
+            font-size: 1.9rem; font-weight: 800; color: var(--text-light); text-decoration: none; letter-spacing: -1px;
+            display: flex; align-items: center; transition: transform var(--transition-speed) ease; font-family: 'Poppins', sans-serif;
+            flex-shrink: 0; /* Prevent logo shrinking */
+        }
+        #navbar .logo:hover { transform: scale(1.03) rotate(-2deg); }
+        #navbar .logo i {
+            margin-right: 0.7rem; font-size: 1.8rem; background: var(--gradient-tech);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px var(--accent-cyan)); transition: transform 0.6s var(--transition-bounce);
+        }
+        #navbar .logo:hover i { transform: rotate(360deg) scale(1.15); }
+
+        /* Desktop Nav Links */
+        #navbar ul#nav-links-desktop {
+            list-style: none; display: flex; align-items: center; margin: 0; padding: 0; /* Reset list styles */
+        }
+        #navbar ul#nav-links-desktop li { margin-left: 2.5rem; }
+        #navbar ul#nav-links-desktop li a:not(.btn) {
+            text-decoration: none; color: var(--text-medium); font-weight: 500; padding-bottom: 0.8rem;
+            position: relative; transition: color var(--transition-speed) ease; letter-spacing: 0.7px;
+            font-size: 1.05rem; white-space: nowrap; /* Prevent wrapping */
+        }
+        #navbar ul#nav-links-desktop li a:not(.btn)::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 3px; background: var(--accent-cyan); border-radius: 1px;
+            transition: width var(--transition-speed) var(--transition-bounce);
+             box-shadow: var(--glow-cyan);
+        }
+        #navbar ul#nav-links-desktop li a:not(.btn):hover,
+        #navbar ul#nav-links-desktop li a:not(.btn).active { color: var(--text-light); text-shadow: 0 0 6px rgba(0, 229, 255, 0.6); }
+        #navbar ul#nav-links-desktop li a:not(.btn):hover::after,
+        #navbar ul#nav-links-desktop li a:not(.btn).active::after { width: 100%; }
+
+        /* Mobile Menu Toggle - Ensure it shows up */
+        .menu-toggle {
+            display: none; /* Hidden by default */
+            cursor: pointer; font-size: 1.9rem; color: var(--text-light); padding: 5px;
+            border: none; background: none; z-index: 1001;
+            margin-left: 1rem; /* Add some space from nav items if they exist */
+        }
+
+        /* Mobile Nav Links Container */
+        ul#mobile-nav-links {
+            list-style: none; display: none; flex-direction: column; position: absolute;
+            top: 100%; /* Position directly below the header */
+            left: 0; width: 100%; background-color: rgba(11, 18, 32, 0.99);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 1.5rem 0;
+            text-align: center; border-top: 1px solid var(--border-color);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.45); opacity: 0; transform: translateY(-15px) scaleY(0.95); /* Adjusted animation start */
+            transform-origin: top center;
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s; /* Delay visibility change */
+            z-index: 999;
+            visibility: hidden; /* Start hidden */
+        }
+         ul#mobile-nav-links.active {
+             display: flex; opacity: 1; transform: translateY(0) scaleY(1);
+             visibility: visible; /* Make visible when active */
+             transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0s; /* Remove delay */
+         }
+         ul#mobile-nav-links li { margin: 1.3rem 0; }
+         ul#mobile-nav-links li a {
+            color: var(--text-medium); text-decoration: none; font-weight: 500; font-size: 1.2rem;
+            padding: 0.7rem 1rem; transition: color var(--transition-speed) ease, background-color 0.2s ease;
+            display: block;
+            border-radius: 5px; margin: 0 1rem;
+         }
+          ul#mobile-nav-links li a.active,
+          ul#mobile-nav-links li a:hover {
+              color: var(--accent-cyan);
+              background-color: rgba(0, 229, 255, 0.08);
+          }
+
+        /* --- Hero Section --- */
+        #hero {
+            padding: 11rem 0 9rem 0; text-align: center; position: relative; overflow: hidden;
+            background-color: var(--bg-dark-primary);
+            background-image: /* Combined background */
+                linear-gradient(rgba(8, 13, 20, 0.75), rgba(8, 13, 20, 0.98)), /* Gradient overlay */
+                radial-gradient(rgba(26, 32, 44, 0.6) 0.7px, transparent 0.7px),
+                radial-gradient(rgba(26, 32, 44, 0.6) 0.7px, transparent 0.7px);
+            background-size: cover, 50px 50px, 50px 50px;
+            background-position: center center, 0 0, 25px 25px;
+        }
+        #hero::before, #hero::after {
+            content: ''; position: absolute; left: 50%; width: 160%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-purple), var(--accent-cyan), transparent);
+            opacity: 0.35; animation: beam-scan 16s linear infinite alternate; transform: translateX(-50%); z-index: 0; /* Ensure beams are behind content */
+        }
+        #hero::before { top: 10%; animation-duration: 18s; }
+        #hero::after { bottom: 10%; animation-delay: -9s; }
+
+        #hero .container { position: relative; z-index: 1; }
+        #hero h1 {
+            font-size: 4.5rem; font-weight: 800; color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.2;
+            text-shadow: 0 0 25px rgba(0, 229, 255, 0.3), 0 4px 8px rgba(0,0,0,0.2); font-family: 'Poppins', sans-serif;
+             animation: subtle-float 7s ease-in-out infinite;
+        }
+        #hero h1 span {
+            background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 12px var(--accent-cyan)); display: inline-block;
+        }
+        #hero p.subtitle {
+            font-size: 1.4rem; max-width: 850px; margin: 0 auto 3.5rem auto; color: var(--text-medium); opacity: 0.9;
+        }
+        .stat-counters { margin-top: 5.5rem; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+        .counter-item { text-align: center; opacity: 0; }
+        .counter-item .count-number { font-size: 3.2rem; font-weight: 700; color: var(--accent-cyan); font-family: 'Roboto Mono', monospace; margin-bottom: 0.5rem; text-shadow: var(--glow-cyan); }
+        .counter-item .count-text { font-size: 1.05rem; color: var(--text-medium); text-transform: uppercase; letter-spacing: 1.8px; }
+
+        /* --- Services Section --- */
+         .service-card {
+            background: var(--gradient-dark-card);
+            padding: 3rem 2rem; border-radius: var(--border-radius); text-align: center;
+            border: 1px solid var(--border-color); position: relative; overflow: hidden;
+            transition: all var(--transition-speed) var(--transition-smooth);
+            z-index: 1; box-shadow: inset 0 1px 3px rgba(0, 229, 255, 0.05), var(--shadow-dark-soft);
+            transform-style: preserve-3d;
+        }
+        .service-card::before {
+            content: ''; position: absolute; inset: -1px; border-radius: inherit;
+            padding: 2px; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            opacity: 0; transition: opacity var(--transition-speed) ease; z-index: -1;
+        }
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.03); border-color: transparent;
+            box-shadow: var(--shadow-glow-md), 0 15px 40px rgba(0, 0, 0, 0.45);
+        }
+         .service-card:hover::before { opacity: 0.9; }
+        .service-card .icon {
+            font-size: 3rem; margin-bottom: 2rem; display: inline-flex; justify-content: center; align-items: center;
+            width: 85px; height: 85px; border-radius: 50%;
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.12), rgba(179, 103, 255, 0.12));
+            border: 1px solid var(--border-accent); color: var(--accent-cyan);
+            box-shadow: inset 0 0 15px rgba(0, 229, 255, 0.3), var(--shadow-glow-sm);
+            transition: all var(--transition-speed) var(--transition-bounce);
+        }
+        .service-card:hover .icon {
+             color: var(--text-light); background: var(--gradient-tech); box-shadow: var(--glow-purple);
+             transform: scale(1.2) rotate(25deg); border-color: transparent;
+        }
+        .service-card h3 { font-size: 1.7rem; font-weight: 600; color: var(--text-light); margin-bottom: 1rem; }
+        .service-card p { font-size: 1.05rem; color: var(--text-medium); }
+
+        /* --- Features Section --- */
+        #features { background-color: var(--bg-dark-primary); }
+        .feature-item {
+            display: flex; align-items: center; gap: 2.5rem; padding: 2.5rem;
+            transition: all var(--transition-speed) var(--transition-smooth); border-radius: var(--border-radius);
+            position: relative; background-color: rgba(17, 21, 34, 0.6);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+         .feature-item::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+             height: 100%;
+            width: 5px; background: var(--accent-indigo);
+            opacity: 0.7; transition: transform 0.4s var(--transition-bounce), opacity var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+             transform-origin: left center; transform: scaleY(0);
+         }
+          .feature-item:hover::before {
+             transform: scaleY(1);
+              opacity: 1; box-shadow: var(--glow-purple);
+          }
+         .feature-item:hover { background-color: rgba(26, 32, 44, 0.8); border-color: rgba(112, 118, 255, 0.4); transform: translateX(10px); }
+        .feature-item .icon {
+            font-size: 2.8rem; color: var(--accent-cyan); flex-shrink: 0;
+            width: 60px; text-align: center; filter: drop-shadow(0 0 8px var(--accent-cyan));
+            transition: transform 0.4s var(--transition-bounce);
+        }
+         .feature-item:hover .icon { transform: scale(1.1) rotate(-10deg); }
+        .feature-item h3 { font-size: 1.5rem; font-weight: 600; color: var(--text-light); margin-bottom: 0.6rem; }
+        .feature-item p { color: var(--text-medium); }
+
+        /* --- Who Benefits Section --- */
+        #who-benefits { }
+        #who-benefits .container { max-width: 1100px; }
+        #who-benefits .benefit-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+        #who-benefits .benefit-list h4 {
+            font-size: 1.8rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+        }
+        #who-benefits .benefit-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        #who-benefits .benefit-list ul li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        #who-benefits .benefit-list ul li::before {
+            content: '\f14a';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-green);
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+         #who-benefits .benefit-list ul li:hover::before { transform: scale(1.2); }
+        #who-benefits .benefit-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), var(--shadow-glow-purple);
+            /* Removed animation from here, handled by observer */
+            /* animation: subtle-float 8s ease-in-out infinite alternate; */
+        }
+        #who-benefits .benefit-image img.visible {
+             opacity: 1; /* Now handled by observer */
+             animation: subtle-float 8s ease-in-out infinite alternate; /* Apply animation when visible */
+         }
+
+
+        /* --- Payment Methods Section --- */
+        #payment-methods { background-color: var(--bg-dark-primary); }
+        #payment-methods .section-title::after { background: var(--gradient-button); box-shadow: var(--shadow-glow-md); }
+        .payment-icons-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .payment-logo img {
+            height: 45px;
+            max-width: 120px;
+            object-fit: contain;
+            filter: grayscale(50%) brightness(0.9);
+            transition: filter var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+        .payment-logo img:hover {
+            filter: grayscale(0%) brightness(1.1);
+            transform: scale(1.1);
+        }
+
+        /* --- How It Works Section --- */
+        #how-it-works { position: relative; }
+        .steps-grid { position: relative; z-index: 1; }
+        .step-card {
+            position: relative; padding: 3rem 1.8rem 2.2rem 1.8rem; text-align: center;
+            border: 1px solid var(--border-color); background-color: var(--bg-dark-tertiary);
+            border-radius: var(--border-radius); box-shadow: var(--shadow-dark-soft);
+            transition: all var(--transition-speed) var(--transition-smooth);
+            z-index: 1;
+            overflow: hidden;
+        }
+        .step-card::after {
+            content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%); /* Slightly less intense */
+            transform: rotate(45deg); opacity: 0; transition: opacity 0.5s ease; pointer-events: none;
+        }
+         .step-card:hover {
+             border-color: var(--accent-cyan); box-shadow: var(--glow-cyan), 0 10px 35px rgba(0,0,0,0.35);
+             transform: scale(1.05) translateY(-5px);
+         }
+         .step-card:hover::after { opacity: 1; }
+     .step-number {
+            position: absolute; top: -30px; left: 50%; transform: translateX(-50%);
+            background: var(--gradient-tech); color: var(--bg-dark-primary);
+            width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-size: 1.9rem; font-weight: 700; box-shadow: var(--shadow-glow-md);
+            border: 4px solid var(--bg-dark-tertiary);
+            font-family: 'Roboto Mono', monospace;
+        }
+        .step-card i {
+            font-size: 3.5rem; color: var(--accent-purple); margin-top: 3.5rem; margin-bottom: 2rem;
+            display: inline-block; transition: transform 0.4s var(--transition-bounce);
+            filter: drop-shadow(0 0 12px var(--accent-purple));
+        }
+         .step-card:hover i { transform: scale(1.2) rotate(-15deg); }
+        .step-card h3 { font-size: 1.6rem; margin-bottom: 0.8rem; color: var(--text-light); }
+        .step-card p { color: var(--text-medium); font-size: 1.05rem; }
+
+        /* --- Testimonials Section --- */
+        .testimonial-card {
+            background-color: rgba(26, 32, 44, 0.8);
+            backdrop-filter: blur(8px); border: 1px solid var(--border-color); padding: 3rem;
+            border-radius: var(--border-radius); margin-bottom: 2rem; position: relative;
+            box-shadow: var(--shadow-dark-soft);
+            border-left: 5px solid var(--accent-purple);
+            transition: all var(--transition-speed) ease;
+        }
+         .testimonial-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4), var(--shadow-glow-md);
+            border-left-color: var(--accent-cyan);
+         }
+        .testimonial-card .quote-icon {
+            position: absolute; top: 15px; right: 25px; font-size: 4rem;
+            color: var(--accent-purple); opacity: 0.1; transform: rotate(10deg);
+             transition: opacity 0.3s ease;
+        }
+        .testimonial-card:hover .quote-icon { opacity: 0.15; }
+        .testimonial-card blockquote {
+            font-size: 1.2rem; font-style: italic; color: var(--text-light);
+            margin-bottom: 2rem; padding-left: 0; border-left: none;
+            line-height: 1.8;
+        }
+        .testimonial-author { display: flex; align-items: center; }
+        .testimonial-author img {
+            width: 60px; height: 60px; border-radius: 50%; margin-right: 1.5rem;
+            border: 3px solid var(--accent-cyan); padding: 3px; object-fit: cover;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+        }
+        .testimonial-author cite { font-style: normal; font-weight: 600; color: var(--text-light); font-size: 1.15rem;}
+        .testimonial-author span { display: block; font-size: 0.95rem; color: var(--text-medium); opacity: 0.8; }
+
+        /* --- FAQ Section --- */
+        .faq-item {
+            background-color: rgba(26, 32, 44, 0.7); border: 1px solid var(--border-color);
+            border-radius: var(--border-radius); margin-bottom: 2rem;
+            padding: 2rem 2.5rem; transition: background-color var(--transition-speed) ease, border-left-color 0.3s ease, box-shadow var(--transition-speed) ease;
+            border-left: 5px solid transparent;
+        }
+         .faq-item:hover {
+             background-color: rgba(31, 41, 55, 0.9);
+             border-left-color: var(--accent-purple);
+             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+         }
+        .faq-question {
+            font-size: 1.3rem; font-weight: 600; color: var(--accent-cyan);
+            margin-bottom: 1rem; position: relative; padding-left: 2.5rem; cursor: default;
+        }
+        .faq-question::before {
+            content: '\f059'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+            position: absolute; left: 0; top: 5px; color: var(--accent-cyan); opacity: 0.8;
+             font-size: 1.2em;
+        }
+        .faq-answer { color: var(--text-medium); padding-left: 2.5rem; line-height: 1.85; font-size: 1.05rem; }
+
+        /* --- Call to Action Section --- */
+        #cta {
+             padding: 7rem 0; border-top: 1px solid var(--border-color); position: relative;
+             background: var(--bg-dark-secondary); /* Match secondary bg */
+             background-image:
+                 linear-gradient(rgba(16, 21, 34, 0.9), rgba(16, 21, 34, 0.98)),
+                 repeating-linear-gradient( -45deg, rgba(31, 41, 55, 0.5), rgba(31, 41, 55, 0.5) 10px, rgba(16, 21, 34, 0.5) 10px, rgba(16, 21, 34, 0.5) 20px ); /* Subtle pattern */
+        }
+        #cta::before { /* Orb 1 */
+            content: ''; position: absolute; top: 50%; left: 10%; width: 150px; height: 150px;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, rgba(0, 229, 255, 0) 70%);
+            border-radius: 50%; filter: blur(30px); animation: subtle-float 8s ease-in-out infinite alternate; z-index: 0;
+        }
+         #cta::after { /* Orb 2 */
+            content: ''; position: absolute; bottom: 10%; right: 15%; width: 120px; height: 120px;
+            background: radial-gradient(circle, rgba(179, 103, 255, 0.15) 0%, rgba(179, 103, 255, 0) 70%);
+            border-radius: 50%; filter: blur(25px); animation: subtle-float 10s 1s ease-in-out infinite alternate-reverse; z-index: 0; /* Added delay */
+        }
+        #cta .container { position: relative; z-index: 1; text-align: center; }
+        #cta h2 { font-size: 3.2rem; font-weight: 700; margin-bottom: 1.8rem; text-shadow: 0 0 15px rgba(179, 103, 255, 0.5); }
+        #cta p { font-size: 1.3rem; margin-bottom: 3.5rem; max-width: 750px; margin-left: auto; margin-right: auto; color: var(--text-medium); }
+        #cta .btn-primary { padding: 1.3rem 3.2rem; font-size: 1.15rem; }
+
+        /* --- Footer --- */
+        #main-footer {
+            background-color: var(--bg-dark-primary); color: var(--text-medium); padding: 5rem 0 3rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+        #main-footer .footer-content {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+             gap: 3.5rem;
+             align-items: start;
+         }
+        #main-footer .footer-column { margin-bottom: 1.5rem; }
+        #main-footer .footer-logo {
+            grid-column: 1 / -1; font-size: 2.2rem; font-weight: 800; color: var(--text-light); opacity: 0.95; margin-bottom: 2.5rem;
+            text-align: center; display: block; font-family: 'Poppins', sans-serif;
+        }
+         #main-footer .footer-column h4 {
+             color: var(--text-light); font-size: 1.4rem; margin-bottom: 1.5rem; font-weight: 600;
+             position: relative; padding-bottom: 0.7rem; letter-spacing: 0.5px;
+         }
+         #main-footer .footer-column h4::after {
+             content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 3px; opacity: 0.8; border-radius: 1px;
+         }
+         #main-footer .footer-about h4::after { background: var(--accent-cyan); }
+         #main-footer .footer-links-section h4::after { background: var(--accent-purple); }
+         #main-footer .footer-contact h4::after { background: var(--accent-indigo); }
+
+        #main-footer .footer-about p { font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
+        #main-footer .footer-links { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; padding-left: 0; }
+        #main-footer .footer-links a { color: var(--text-medium); text-decoration: none; transition: color var(--transition-speed) ease, padding-left 0.3s ease; font-size: 1rem; display: inline-block; padding: 0.2rem 0; }
+        #main-footer .footer-links a:hover { color: var(--accent-cyan); text-shadow: 0 0 5px var(--accent-cyan); padding-left: 5px; }
+        #main-footer .social-links { list-style: none; display: flex; gap: 2rem; margin-bottom: 1rem; font-size: 1.7rem; justify-content: flex-start; padding-left: 0; }
+        #main-footer .social-links a { color: var(--text-medium); text-decoration: none; transition: color var(--transition-speed) ease, transform var(--transition-speed) ease; }
+        #main-footer .social-links a:hover { color: var(--accent-cyan); transform: scale(1.25) translateY(-4px); filter: drop-shadow(0 0 10px var(--accent-cyan)); }
+        #main-footer .footer-contact p { margin-top: 1rem; }
+        #main-footer .footer-contact p a { color: var(--text-medium); text-decoration: none; transition: color var(--transition-speed) ease; font-size: 1rem; }
+        #main-footer .footer-contact p a:hover { color: var(--accent-cyan); }
+
+        #main-footer .copyright {
+            grid-column: 1 / -1; text-align: center; font-size: 0.95rem; opacity: 0.7; line-height: 1.5; margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--border-color);
+        }
+        #main-footer .copyright a { color: var(--text-medium); text-decoration: none; border-bottom: 1px dashed rgba(160, 174, 192, 0.5); transition: color 0.3s, border-color 0.3s; }
+        #main-footer .copyright a:hover { color: var(--accent-cyan); border-bottom-color: var(--accent-cyan); }
+
+        /* --- Support Widget --- */
+        #support-widget { position: fixed; bottom: 25px; right: 25px; z-index: 1001; }
+        #support-toggle {
+            width: 60px; height: 60px; background: var(--gradient-support); border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            color: var(--text-light); font-size: 1.8rem; cursor: pointer; border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), var(--shadow-glow-sm);
+            transition: transform 0.3s var(--transition-bounce), box-shadow 0.3s ease;
+            animation: pulse-support 2.5s infinite ease-in-out;
+        }
+        #support-toggle:hover { transform: scale(1.1); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), var(--shadow-glow-md); }
+        #support-options {
+            position: absolute; bottom: 75px; right: 0; display: flex; flex-direction: column; gap: 12px;
+            opacity: 0; visibility: hidden; transform: translateY(15px) scale(0.9); transform-origin: bottom right;
+            transition: all 0.3s var(--transition-bounce);
+        }
+        #support-widget.active #support-options { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+        #support-options a {
+            width: 50px; height: 50px; background-color: var(--bg-dark-tertiary); border: 1px solid var(--border-color);
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            color: var(--text-medium); font-size: 1.5rem; text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); transition: all 0.3s ease;
+        }
+        #support-options a:hover { transform: scale(1.1) rotate(5deg); box-shadow: var(--glow-cyan); }
+         #support-options a.whatsapp:hover { background-color: #25D366; color: white; box-shadow: 0 0 15px #25D366; }
+         #support-options a.telegram:hover { background-color: #0088cc; color: white; box-shadow: 0 0 15px #0088cc; }
+         #support-options a.call:hover { background-color: var(--accent-pink); color: white; box-shadow: 0 0 15px var(--accent-pink); }
+
+        /* --- Ad Banner --- */
+        #ad-banner {
+            position: fixed; bottom: 25px; left: 25px; background-color: rgba(26, 32, 44, 0.97); /* Darker background */
+            padding: 1rem 1.5rem; border-radius: var(--border-radius); border: 1px solid var(--border-accent);
+            z-index: 1000; display: flex; align-items: center; gap: 1rem; max-width: 320px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45); /* Stronger shadow */
+            opacity: 0; transform: translateX(-110%); /* Start further off-screen */
+            animation: slide-in-left 0.7s 1.5s forwards cubic-bezier(0.25, 1, 0.5, 1); /* Delayed, smooth slide-in */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        #ad-banner.hidden { animation: slide-out-left 0.5s forwards ease-in; pointer-events: none; }
+        #ad-banner p { margin: 0; font-size: 0.95rem; color: var(--text-medium); flex-grow: 1; }
+        #ad-banner p strong { color: var(--accent-cyan); font-weight: 600; }
+        #ad-banner p a { color: var(--accent-pink); text-decoration: none; border-bottom: 1px dotted var(--accent-pink); transition: color 0.3s ease, border-color 0.3s ease; }
+        #ad-banner p a:hover { color: var(--accent-cyan); border-bottom-color: var(--accent-cyan); }
+        #close-ad-btn {
+            background: none; border: none; color: var(--text-medium); font-size: 1.4rem; cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease; padding: 0.2rem; line-height: 1; align-self: flex-start;
+        }
+        #close-ad-btn:hover { color: var(--accent-pink); transform: scale(1.15) rotate(90deg); } /* Rotate on hover */
+
+        /* --- Responsive Adjustments --- */
+        /* Mobile Toggle Display */
+        @media (max-width: 992px) { /* Adjust breakpoint if needed */
+            #navbar ul#nav-links-desktop {
+                display: none; /* Hide desktop links */
+            }
+            .menu-toggle {
+                display: block; /* Show mobile toggle */
+            }
+             #main-footer .footer-content { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+             #main-footer .footer-column { text-align: left; } /* Keep left align on medium */
+             #main-footer .footer-column h4::after { left: 0; transform: none; }
+             #main-footer .social-links { justify-content: flex-start; }
+        }
+
+        @media (max-width: 768px) {
+             html { font-size: 14px; } /* Adjust base size */
+             .section { padding: 5rem 0; }
+             .section-title { font-size: 2.6rem; margin-bottom: 3.5rem;}
+             #hero { padding: 9rem 0 7rem 0; } /* Adjusted padding */
+             #hero h1 { font-size: 3.2rem; }
+             #hero p.subtitle { font-size: 1.2rem; }
+             .stat-counters { gap: 2rem 3rem; } /* Adjusted gap */
+             .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
+             .grid-4.steps-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));} /* Adjust step card min width */
+             .payment-icons-grid { gap: 2rem; }
+             .payment-logo img { height: 40px; }
+             #who-benefits .benefit-content { grid-template-columns: 1fr; text-align: center; }
+             #who-benefits .benefit-list { margin-bottom: 2rem; }
+             #who-benefits .benefit-list ul { display: inline-block; text-align: left;}
+             #main-footer .footer-content { grid-template-columns: 1fr; text-align: center; }
+             #main-footer .footer-column h4::after { left: 50%; transform: translateX(-50%); }
+             #main-footer .footer-links { align-items: center; }
+             #main-footer .social-links { justify-content: center; }
+             #ad-banner { max-width: calc(100vw - 40px); left: 20px; bottom: 20px; padding: 0.9rem 1.2rem; }
+             #support-widget { bottom: 20px; right: 20px; }
+            .footer-column h4{
+                text-align: center;
+            }
+            
+           .footer-column p{
+               text-align: center;
+           }
+        }
+
+        @media (max-width: 480px) {
+             html { font-size: 15px; }
+             .section { padding: 4rem 0; }
+             .section-title { font-size: 2.2rem; }
+             #hero { padding: 8rem 0 6rem 0; }
+             #hero h1 { font-size: 2.8rem; line-height: 1.25; }
+             #hero p.subtitle { font-size: 1.1rem; }
+             .stat-counters { gap: 1.5rem 2.5rem; margin-top: 4rem;}
+             .counter-item .count-number { font-size: 2.5rem; }
+             .service-card, .feature-item, .step-card, .testimonial-card, .faq-item { padding: 2rem 1.5rem; }
+             .payment-icons-grid { gap: 1.5rem; }
+             .payment-logo img { height: 35px; }
+             .faq-question { font-size: 1.15rem; padding-left: 0;}
+             .faq-answer { padding-left: 0; font-size: 1rem;}
+             .faq-question::before { display: none; } /* Hide icon on smallest screens */
+             #cta { padding: 6rem 0; }
+             #cta h2 { font-size: 2.4rem; }
+             #cta p { font-size: 1.1rem; }
+             #ad-banner { padding: 0.8rem 1rem; gap: 0.8rem; bottom: 15px; left: 15px; }
+             #ad-banner p { font-size: 0.9rem; }
+             #close-ad-btn { font-size: 1.2rem; }
+             #support-widget { bottom: 15px; right: 15px; }
+             #support-toggle { width: 55px; height: 55px; font-size: 1.6rem;}
+             #support-options { bottom: 70px; gap: 10px; }
+             #support-options a { width: 45px; height: 45px; font-size: 1.4rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav id="navbar">
+                <a href="#hero" class="logo"><i class="fas fa-atom"></i>Quantum SMM</a>
+                <!-- Desktop Nav Links -->
+                <ul id="nav-links-desktop">
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#features">Offers</a></li>
+                    <li><a href="#who-benefits">About Us</a></li>
+                    <li><a href="#payment-methods">Contact Us</a></li>
+                    <li><a href="#how-it-works">Menu</a></li>
+                    <li><a href="#testimonials">U Tech</a></li>
+                 
+                </ul>
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" id="mobile-menu" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+        <!-- Mobile Navigation Links -->
+        <ul id="mobile-nav-links">
+            <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#features">Offers</a></li>
+                    <li><a href="#who-benefits">About Us</a></li>
+                    <li><a href="#payment-methods">Contact Us</a></li>
+                    <li><a href="#how-it-works">Menu</a></li>
+                    <li><a href="#testimonials">U Tech</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container animated-element">
+            <h1>Amplify Your Reach with <span>Quantum SMM</span></h1>
+            <p class="subtitle">Experience the next level of social media growth. Quantum SMM provides ultra-fast, high-quality SMM services with a user-friendly interface for instant results.</p>
+            <a href="#services" class="btn btn-primary btn-lg">Explore Services <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+            <div class="stat-counters">
+                <div class="counter-item animated-element delay-1" data-target="143+"> <div class="count-number">0</div> <div class="count-text">Signals Processed</div> </div>
+                <div class="counter-item animated-element delay-2" data-target="19+"> <div class="count-number">0</div> <div class="count-text">Happy Clients</div> </div>
+                <div class="counter-item animated-element delay-3" data-target="1"> <div class="count-number">0</div> <div class="count-text">Networks Integrated</div> </div>
+                <div class="counter-item animated-element delay-4" data-target="99.%"> <div class="count-number">0%</div> <div class="count-text">Uptime SLA</div> </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-bg-secondary">
+        <div class="container">
+            <h2 class="section-title">Available Accelerators</h2>
+            <div class="grid grid-4">
+                <div class="service-card animated-element"> <div class="icon"><i class="fab fa-instagram"></i></div> <h3>Insta-Stream Injector</h3> <p>High-velocity follower/like streams for Instagram dominance.</p> </div>
+                <div class="service-card animated-element delay-1"> <div class="icon"><i class="fab fa-youtube"></i></div> <h3>Tube-Quantum Leap</h3> <p>Propel YouTube channels with views, subs, and watch-time.</p> </div>
+                <div class="service-card animated-element delay-2"> <div class="icon"><i class="fab fa-facebook"></i></div> <h3>Face-Matrix Enhancer</h3> <p>Amplify Facebook pages, posts, and group interactions.</p> </div>
+                <div class="service-card animated-element delay-3"> <div class="icon"><i class="fab fa-tiktok"></i></div> <h3>Tik-Pulse Generator</h3> <p>Generate viral velocity on TikTok with followers, views & shares.</p> </div>
+                <div class="service-card animated-element delay-4"> <div class="icon"><i class="fab fa-twitter"></i></div> <h3>X-Protocol Uplink</h3> <p>Boost your influence on X (Twitter) with followers & engagement.</p> </div>
+                <div class="service-card animated-element delay-5"> <div class="icon"><i class="fab fa-spotify"></i></div> <h3>Audio-Wave Modulator</h3> <p>Amplify Spotify plays, playlist resonance, and listener base.</p> </div>
+                <div class="service-card animated-element delay-6"> <div class="icon"><i class="fab fa-telegram-plane"></i></div> <h3>Tele-Node Expansion</h3> <p>Expand Telegram channels/groups with members & post views.</p> </div>
+                <div class="service-card animated-element delay-7"> <div class="icon"><i class="fab fa-pinterest"></i></div> <h3>Pin-Flux Amplifier</h3> <p>Increase Pinterest visibility with repins, saves, and followers.</p> </div>
+                <div class="service-card animated-element delay-8"> <div class="icon"><i class="fas fa-globe"></i></div> <h3>Web-Traffic Surge</h3> <p>Drive targeted or worldwide traffic streams to any website URL.</p> </div>
+                <div class="service-card animated-element delay-9"> <div class="icon"><i class="fab fa-reddit-alien"></i></div> <h3>Reddit-Karma Engine</h3> <p>Enhance Reddit presence with upvotes, followers, and comments.</p> </div>
+                <div class="service-card animated-element delay-1"> <div class="icon"><i class="fab fa-linkedin"></i></div> <h3>Linked-Network Grid</h3> <p>Boost LinkedIn profiles/pages with connections & engagement.</p> </div>
+                <div class="service-card animated-element delay-2"> <div class="icon"><i class="fab fa-discord"></i></div> <h3>Discord Comm-Link</h3> <p>Grow Discord servers with verified member boosts online/offline.</p> </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">Core System Features</h2>
+            <div class="grid grid-3">
+                 <div class="feature-item animated-element"> <div class="icon"><i class="fas fa-bolt"></i></div> <div> <h3>Instant Start</h3> <p>Orders begin processing almost immediately after placement.</p> </div> </div>
+                 <div class="feature-item animated-element delay-1"> <div class="icon"><i class="fas fa-shield-alt"></i></div> <div> <h3>Premium Quality</h3> <p>High-retention services ensuring profile safety and real growth.</p> </div> </div>
+                 <div class="feature-item animated-element delay-2"> <div class="icon"><i class="fas fa-tags"></i></div> <div> <h3>Affordable Rates</h3> <p>Competitive pricing providing maximum value for your budget.</p> </div> </div>
+                 <div class="feature-item animated-element delay-3"> <div class="icon"><i class="fas fa-headset"></i></div> <div> <h3>24/7 Support</h3> <p>Dedicated assistance available round-the-clock via multiple channels.</p> </div> </div>
+                 <div class="feature-item animated-element delay-4"> <div class="icon"><i class="fas fa-tachometer-alt-fast"></i></div> <div> <h3>User-Friendly Panel</h3> <p>Manage campaigns effortlessly through our intuitive dashboard.</p> </div> </div>
+                 <div class="feature-item animated-element delay-5"> <div class="icon"><i class="fas fa-database"></i></div> <div> <h3>Secure Payments</h3> <p>Reliable gateways supporting your preferred local payment methods.</p> </div> </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Benefits Section -->
+    <section id="who-benefits" class="section section-bg-secondary">
+        <div class="container">
+            <h2 class="section-title">Who Benefits from Quantum SMM?</h2>
+            <div class="benefit-content">
+                <div class="benefit-list animated-element">
+                    <h4>Unlock Growth Potential For:</h4>
+                    <p style="color: var(--text-medium); margin-bottom: 2rem;">Quantum SMM is designed to accelerate success for a diverse range of users:</p>
+                    <ul>
+                        <li>Digital Marketing Agencies</li>
+                        <li>Social Media Managers & Freelancers</li>
+                        <li>Influencers & Content Creators</li>
+                        <li>Businesses & Brands (Startups to Enterprises)</li>
+                        <li>E-commerce Stores & Online Shops</li>
+                        <li>Musicians, Artists & Public Figures</li>
+                        <li>Anyone needing rapid social proof and visibility!</li>
+                    </ul>
+                </div>
+                <div class="benefit-image animated-element delay-1">
+                    <img src="https://img.freepik.com/free-vector/businessman-talk-megaphone-with-exclamation-point-draw-attention-attention-span-take-note-requiring-attention-concept-white-background_335657-2019.jpg?t=st=1745312742~exp=1745316342~hmac=f196858351eb2c5838ec442b77f24fb9fcb53bd93d08f06bbe91ac130d7f6c9c&w=826" alt="Diverse group benefiting from SMM" class="animated-element">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section id="payment-methods" class="section">
+        <div class="container">
+            <h2 class="section-title">Easy & Secure Payments</h2>
+            <p class="text-center" style="max-width: 700px; margin: -3rem auto 4rem auto; color: var(--text-medium);">Fund your account quickly and securely using popular local methods.</p>
+            <div class="payment-icons-grid">
+                <div class="payment-logo animated-element" title="bKash">
+                    <img src="https://via.placeholder.co/120x45/e2136e/ffffff?text=bKash" alt="bKash Logo"> <!-- Placeholder -->
+                </div>
+                <div class="payment-logo animated-element delay-1" title="Nagad">
+                     <img src="https://placeholder.co/120x45/f58220/ffffff?text=Nagad" alt="Nagad Logo"> <!-- Placeholder -->
+                </div>
+                <div class="payment-logo animated-element delay-2" title="Rocket">
+                     <img src="https://placeholder.co/120x45/8b008b/ffffff?text=Rocket" alt="Rocket Logo"> <!-- Placeholder -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section section-bg-secondary">
+        <div class="container">
+            <h2 class="section-title">Simple Ordering Protocol</h2>
+            <div class="grid grid-4 steps-grid">
+                 <div class="step-card animated-element"> <div class="step-number">01</div> <i class="fas fa-mouse-pointer"></i> <h3>Choose Service</h3> <p>Select the social platform and specific service you need.</p> </div>
+                 <div class="step-card animated-element delay-1"> <div class="step-number">02</div> <i class="fas fa-link"></i> <h3>Enter Details</h3> <p>Provide the link to your profile/post and desired quantity.</p> </div>
+                 <div class="step-card animated-element delay-2"> <div class="step-number">03</div> <i class="fas fa-credit-card"></i> <h3>Make Payment</h3> <p>Complete the secure payment using bKash, Nagad, or Rocket.</p> </div>
+                 <div class="step-card animated-element delay-3"> <div class="step-number">04</div> <i class="fas fa-rocket"></i> <h3>Receive Results</h3> <p>Watch your social presence amplify as the order completes!</p> </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+         <div class="container">
+             <h2 class="section-title">User Transmissions (Feedback)</h2>
+             <div class="grid grid-2">
+                 <div class="testimonial-card animated-element"> <div class="quote-icon"><i class="fas fa-quote-left"></i></div> <blockquote> "অসাধারণ সার্ভিস! অর্ডার করার কয়েক মিনিটের মধ্যেই রেজাল্ট পেয়েছি। আগের প্যানেল থেকে অনেক ভালো। দ্রুত গ্রোথের জন্য Quantum SMM সেরা।" </blockquote> <div class="testimonial-author"> <img src="https://via.placeholder.com/60/00e5ff/080d14?text=RA" alt="Avatar Rahim Ahmed"> <div> <cite>Rahim Ahmed</cite> <span>Digital Marketer</span> </div> </div> </div>
+                 <div class="testimonial-card animated-element delay-1"> <div class="quote-icon"><i class="fas fa-quote-left"></i></div> <blockquote> "আমার এজেন্সির জন্য এদের সার্ভিস ব্যবহার করি, খুবই স্ট্যাবল এবং নির্ভরযোগ্য। সাপোর্টও খুব দ্রুত রেসপন্স করে। রিসেলার না হলেও ব্যক্তিগত ব্যবহারের জন্য বেস্ট।" </blockquote> <div class="testimonial-author"> <img src="https://via.placeholder.com/60/b367ff/080d14?text=SA" alt="Avatar Sumaiya Aktar"> <div> <cite>Sumaiya Aktar</cite> <span>Agency Owner</span> </div> </div> </div>
+                 <div class="testimonial-card animated-element delay-2"> <div class="quote-icon"><i class="fas fa-quote-left"></i></div> <blockquote> "The quality of followers is noticeably better than other panels I've tried. Less drop-off and they actually look legitimate. Worth the price for reliable services." </blockquote> <div class="testimonial-author"> <img src="https://via.placeholder.com/60/7076ff/080d14?text=MC" alt="Avatar Mike Chen"> <div> <cite>Mike Chen</cite> <span>Influencer & Content Creator</span> </div> </div> </div>
+                 <div class="testimonial-card animated-element delay-3"> <div class="quote-icon"><i class="fas fa-quote-left"></i></div> <blockquote> "Finally, a panel that looks and feels professional. The dark theme is great, and the interface is super easy to use. Funding with bKash was instant." </blockquote> <div class="testimonial-author"> <img src="https://via.placeholder.com/60/14f195/080d14?text=DB" alt="Avatar David Beck"> <div> <cite>David Beck</cite> <span>E-commerce Entrepreneur</span> </div> </div> </div>
+             </div>
+         </div>
+    </section>
+
+     <!-- FAQ Section -->
+     <section id="faq" class="section section-bg-secondary">
+        <div class="container">
+             <h2 class="section-title">Intel Base (Frequently Asked)</h2>
+             <div class="grid grid-2">
+                 <div class="animated-element">
+                     <div class="faq-item"> <h4 class="faq-question">এই সার্ভিসগুলো কি আমার একাউন্টের জন্য নিরাপদ?</h4> <p class="faq-answer">হ্যাঁ, আমরা একাউন্টের নিরাপত্তাকে সর্বোচ্চ গুরুত্ব দেই। আমাদের সার্ভিসগুলো অরগানিক দেখানোর জন্য ডিজাইন করা হয়েছে এবং প্ল্যাটফর্মের নীতিমালা মেনে চলে। সেরা ফলাফলের জন্য ধীরে ধীরে গ্রোথ করার পরামর্শ দেওয়া হয়।</p> </div>
+                     <div class="faq-item"> <h4 class="faq-question">আমার অর্ডার কত দ্রুত ডেলিভারি হবে?</h4> <p class="faq-answer">বেশিরভাগ অর্ডার প্লেস করার কয়েক মিনিটের মধ্যেই আমাদের অটোমেটেড সিস্টেমে শুরু হয়ে যায়। সার্ভিস, পরিমাণ এবং নেটওয়ার্ক লোডের উপর ভিত্তি করে ডেলিভারির গতি পরিবর্তিত হতে পারে, যা তাৎক্ষণিক থেকে শুরু করে কয়েক ঘন্টা/দিন পর্যন্ত হতে পারে।</p> </div>
+                      <div class="faq-item"> <h4 class="faq-question">পেমেন্টের জন্য কি কি মাধ্যম গ্রহণ করা হয়?</h4> <p class="faq-answer">আমরা বিকাশ, নগদ এবং রকেট সহ একাধিক নিরাপদ লোকাল পেমেন্ট গেটওয়ে সমর্থন করি। পেমেন্ট প্রক্রিয়াটি দ্রুত এবং সুরক্ষিত।</p> </div>
+                 </div>
+                  <div class="animated-element delay-1">
+                      <div class="faq-item"> <h4 class="faq-question">আপনারা কি রিফান্ড করেন?</h4> <p class="faq-answer">আমাদের সার্ভিস প্রোটোকল (শর্তাবলী) অনুযায়ী রিফান্ড প্রক্রিয়া সম্পন্ন হয়। সাধারণত, একবার ফান্ড যোগ করার পর মূল পেমেন্ট পদ্ধতিতে রিফান্ড দেওয়া হয় না। তবে, ডেলিভারি না হওয়া অর্ডার বা সিস্টেমের গুরুতর ত্রুটির জন্য ক্রেডিট আপনার Quantum SMM ব্যালেন্সে ফেরত যোগ করা যেতে পারে।</p> </div>
+                      <div class="faq-item"> <h4 class="faq-question">বিভিন্ন কোয়ালিটির সার্ভিসের মধ্যে পার্থক্য কি?</h4> <p class="faq-answer">আমরা বিভিন্ন স্তরের সার্ভিস অফার করি। "হাই কোয়ালিটি" সার্ভিস ভালো মান এবং görünüm প্রদান করে। "פריমিয়াম/বাস্তব" সার্ভিসে প্রায়শই বেশি অথেনটিক প্রোফাইল বা ইন্টার‍্যাকশন থাকে যা দীর্ঘস্থায়ী গ্রোথ এবং ভালো এনগেজমেন্টের জন্য আদর্শ।</p> </div>
+                      <div class="faq-item"> <h4 class="faq-question">অর্ডার করতে কি লগইন করতে হবে?</h4> <p class="faq-answer">না, আমাদের সিস্টেমে সরাসরি অর্ডার করার সুবিধা রয়েছে। কোনো একাউন্ট রেজিস্ট্রেশন বা লগইনের প্রয়োজন নেই। আপনি সহজেই সার্ভিস নির্বাচন করে, লিঙ্ক ও পরিমাণ দিয়ে, এবং পেমেন্ট সম্পন্ন করে অর্ডার করতে পারেন।</p> </div>
+                  </div>
+             </div>
+         </div>
+     </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta">
+        <div class="container animated-element">
+            <h2>Boost Your Social Presence Today!</h2>
+            <p>Stop waiting for organic growth. Leverage Quantum SMM's powerful services to get instant results and dominate your social media landscape.</p>
+            <a href="#services" class="btn btn-primary btn-lg">Get Started Now <i class="fas fa-angle-double-right" style="margin-left: 8px;"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                 <div class="footer-logo">Quantum SMM</div>
+
+                 <div class="footer-column footer-about">
+                    <h4>About Us</h4>
+                    <p>Quantum SMM provides elite social media marketing services, focusing on speed, quality, and reliability. We empower individuals and businesses to achieve rapid growth across various social platforms efficiently.</p>
+                 </div>
+
+                 <div class="footer-column footer-links-section">
+                     <h4>Quick Links</h4>
+                     <ul class="footer-links">
+                         <li><a href="#hero">Home</a></li>
+                         <li><a href="#services">Services</a></li>
+                         <li><a href="#features">Features</a></li>
+                         <li><a href="#who-benefits">Who Benefits</a></li>
+                         <li><a href="#payment-methods">Payments</a></li>
+                         <li><a href="#faq">FAQ</a></li>
+                         <li><a href="#">Terms of Service</a></li>
+                         <li><a href="#">Privacy Policy</a></li>
+                     </ul>
+                 </div>
+
+
+ <div class="footer-column footer-links-section">
+                     <h4>Quick Links</h4>
+                     <ul class="footer-links">
+                         <li><a href="#hero">Home</a></li>
+                         <li><a href="#services">Services</a></li>
+                         <li><a href="#features">Features</a></li>
+                         <li><a href="#who-benefits">Who Benefits</a></li>
+                         <li><a href="#payment-methods">Payments</a></li>
+                         <li><a href="#faq">FAQ</a></li>
+                         <li><a href="#">Terms of Service</a></li>
+                         <li><a href="#">Privacy Policy</a></li>
+                     </ul>
+                 </div>
+                 
+                 <div class="footer-column footer-contact">
+                    <h4>Connect & Support</h4>
+                     <ul class="social-links">
+                        <!-- Add actual links -->
+                         <li><a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+                         <li><a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a></li>
+                         <li><a href="tel:YOUR_PHONE_NUMBER" aria-label="Call"><i class="fas fa-phone"></i></a></li>
+                         <li><a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                     </ul>
+                     <p><a href="mailto:support@quantumsmm.com">support@quantumsmm.com</a></p>
+                 </div>
+
+                 <p class="copyright">System Build: v3.17 | © <span id="year"></span> Quantum SMM Network. All Rights Reserved. | Design Inspiration by Quantum Core Labs</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Support Widget -->
+    <div id="support-widget">
+        <button id="support-toggle" aria-label="Open Support Options">
+            <i class="fas fa-headset"></i>
+        </button>
+        <div id="support-options">
+             <!-- Add actual links -->
+            <a href="tel:YOUR_PHONE_NUMBER" class="call" aria-label="Call Us" title="Call Us"><i class="fas fa-phone"></i></a>
+            <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" class="whatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="telegram" aria-label="Chat on Telegram" title="Chat on Telegram"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+    </div>
+
+    <!-- Ad Banner -->
+    <div id="ad-banner">
+         <p><strong>Special Offer!</strong> Get 10% bonus credits on your first fund addition. <a href="#payment-methods">Add Funds Now!</a></p>
+        <button id="close-ad-btn" aria-label="Close Ad">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Dynamic Year ---
+            const yearElement = document.getElementById('year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+            // --- Mobile Menu Logic ---
+            const menuToggle = document.getElementById('mobile-menu');
+            const mobileNav = document.getElementById('mobile-nav-links');
+            const body = document.body;
+
+            if (menuToggle && mobileNav) {
+                menuToggle.addEventListener('click', () => {
+                    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                    menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+                    mobileNav.classList.toggle('active');
+                    body.classList.toggle('mobile-menu-active', !isExpanded); // Toggle body class
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.className = !isExpanded ? 'fas fa-times' : 'fas fa-bars'; // Toggle icon class directly
+                    }
+                });
+
+                // Close Mobile Menu on Link Click
+                mobileNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        if (link.getAttribute('href')?.startsWith('#')) {
+                            if (mobileNav.classList.contains('active')) {
+                                menuToggle.click(); // Simulate click to close
+                            }
+                        }
+                        // Allow default for external links or buttons if any were added
+                    });
+                });
+            }
+
+            // --- Sticky Header Logic ---
+            const header = document.getElementById('main-header');
+            let lastScrollTop = 0;
+            const headerHeight = header ? header.offsetHeight : 60; // Initial height or estimate
+
+            function handleScroll() {
+                if (!header) return;
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > 50) { // Threshold to add scrolled class
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                setActiveLink(); // Update active link on scroll
+            }
+            window.addEventListener('scroll', handleScroll, { passive: true });
+
+            // --- Active Nav Link Highlighting ---
+            const sections = document.querySelectorAll('section[id]');
+            const desktopNavLinks = document.querySelectorAll('#nav-links-desktop a[href^="#"]');
+            const mobileNavLinksList = document.querySelectorAll('#mobile-nav-links a[href^="#"]');
+            const headerOffset = 100; // Adjust this offset based on your header height and desired trigger point
+
+            function setActiveLink() {
+                let currentSectionId = '';
+                const scrollPosition = window.pageYOffset;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    // Check if the top of the section is within the viewport range considering the offset
+                    if (scrollPosition >= sectionTop - headerOffset && scrollPosition < sectionTop + sectionHeight - headerOffset) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+
+                 // If scrolled to the very top, activate the first link ('hero')
+                 if (scrollPosition < (sections[0]?.offsetTop || 0) - headerOffset) {
+                      currentSectionId = sections[0]?.getAttribute('id') || '';
+                 }
+                 // If scrolled near the bottom, activate the last link
+                 else if (scrollPosition + window.innerHeight >= document.documentElement.scrollHeight - 50) {
+                    currentSectionId = sections[sections.length - 1]?.getAttribute('id') || '';
+                 }
+
+                const allNavLinks = [...desktopNavLinks, ...mobileNavLinksList];
+                allNavLinks.forEach(a => {
+                    a.classList.remove('active');
+                    const linkHref = a.getAttribute('href');
+                    if (linkHref && linkHref === '#' + currentSectionId) {
+                        a.classList.add('active');
+                    }
+                });
+            }
+             // Call once on load and debounced/throttled scroll
+            setActiveLink();
+            // Note: A debounce/throttle function on scroll listener for setActiveLink would be more performant for frequent scrolling
+
+
+            // --- Intersection Observer for Animations ---
+            const animatedElements = document.querySelectorAll('.animated-element');
+             if ('IntersectionObserver' in window) {
+                 const observerOptions = { root: null, threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+                 const observer = new IntersectionObserver((entries, observer) => {
+                     entries.forEach(entry => {
+                         if (entry.isIntersecting) {
+                             entry.target.classList.add('visible');
+                             if (entry.target.classList.contains('counter-item') && !entry.target.dataset.counted) {
+                                 animateCounter(entry.target.querySelector('.count-number'));
+                                 entry.target.dataset.counted = 'true';
+                             }
+                             if (entry.target.matches('.benefit-image img') && !entry.target.classList.contains('visible')) {
+                                entry.target.classList.add('visible'); // Animate image when visible
+                             }
+                              // observer.unobserve(entry.target); // Optional: Animate only once
+                         } else {
+                              // Optional: Remove class to re-animate on scroll up/down
+                              // entry.target.classList.remove('visible');
+                              // if (entry.target.classList.contains('counter-item')) {
+                              //    entry.target.removeAttribute('data-counted');
+                              //    const countNumElement = entry.target.querySelector('.count-number');
+                              //    if(countNumElement) countNumElement.textContent = '0';
+                              // }
+                              // if (entry.target.matches('.benefit-image img')) {
+                              //    entry.target.classList.remove('visible');
+                              // }
+                         }
+                     });
+                 }, observerOptions);
+                 animatedElements.forEach(elem => { observer.observe(elem); });
+            } else { // Fallback for older browsers
+                animatedElements.forEach(elem => {
+                    elem.classList.add('visible');
+                     if (elem.classList.contains('counter-item') && !elem.dataset.counted) {
+                         animateCounter(elem.querySelector('.count-number'));
+                         elem.dataset.counted = 'true';
+                     }
+                     if (elem.matches('.benefit-image img')) { elem.classList.add('visible');}
+                });
+            }
+
+            // --- Animated Counter Function ---
+             function animateCounter(element) {
+                 if (!element) return;
+                 const counterItem = element.closest('.counter-item');
+                 if (!counterItem || !counterItem.dataset.target) return;
+                 const targetStr = counterItem.dataset.target;
+                 const targetNum = parseFloat(targetStr.replace(/[^0-9.]/g, ''));
+                 const suffix = targetStr.replace(/[0-9.,]/g, ''); // Keep K, M, + etc.
+                 const duration = 2000;
+                 let startTimestamp = null;
+
+                 if (isNaN(targetNum)) { element.textContent = targetStr; return; }
+
+                 const step = (timestamp) => {
+                     if (!startTimestamp) startTimestamp = timestamp;
+                     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                     let currentNum = progress * targetNum;
+                     let displayValue;
+
+                     if (suffix === '%') { displayValue = currentNum.toFixed(1); }
+                     else if (targetNum < 100 && !Number.isInteger(targetNum) && targetNum !== 0) { displayValue = currentNum.toFixed(1); }
+                     else { displayValue = Math.floor(currentNum).toLocaleString(); }
+
+                     element.textContent = displayValue + suffix;
+
+                     if (progress < 1) { window.requestAnimationFrame(step); }
+                     else { // Ensure final string matches, including suffix like K, M, +
+                         let finalNumStr;
+                          if (suffix === '%') { finalNumStr = targetNum.toFixed(1); }
+                          else if (targetNum < 100 && !Number.isInteger(targetNum) && targetNum !== 0) { finalNumStr = targetNum.toFixed(1); }
+                          else { finalNumStr = targetNum.toLocaleString(); }
+                          element.textContent = finalNumStr + suffix;
+                     }
+                 };
+                 window.requestAnimationFrame(step);
+             }
+
+             // --- Support Widget Logic ---
+            const supportWidget = document.getElementById('support-widget');
+            const supportToggle = document.getElementById('support-toggle');
+            const supportIcon = supportToggle ? supportToggle.querySelector('i') : null;
+
+            if (supportWidget && supportToggle && supportIcon) {
+                supportToggle.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent click from bubbling to document
+                    const isActive = supportWidget.classList.toggle('active');
+                    supportIcon.className = isActive ? 'fas fa-times' : 'fas fa-headset';
+                    supportToggle.setAttribute('aria-label', isActive ? 'Close Support Options' : 'Open Support Options');
+                });
+
+                // Close widget when clicking outside
+                 document.addEventListener('click', (event) => {
+                     if (supportWidget.classList.contains('active') && !supportWidget.contains(event.target)) {
+                         supportToggle.click(); // Close it
+                     }
+                 });
+                 // Prevent closing when clicking inside options
+                 const supportOptions = document.getElementById('support-options');
+                 if(supportOptions) {
+                     supportOptions.addEventListener('click', (e) => e.stopPropagation());
+                 }
+            }
+
+            // --- Ad Banner Logic ---
+            const adBanner = document.getElementById('ad-banner');
+            const closeAdBtn = document.getElementById('close-ad-btn');
+            const AD_CLOSED_KEY = 'quantumAdClosed_v1'; // Unique key
+
+            if (adBanner) {
+                 // Check local storage
+                try {
+                    if (localStorage.getItem(AD_CLOSED_KEY) === 'true') {
+                        adBanner.style.display = 'none'; // Hide immediately
+                        adBanner.classList.add('hidden'); // Add class to prevent animation flash
+                    }
+                } catch (e) { console.warn('localStorage access error.'); }
+
+                if (closeAdBtn) {
+                    closeAdBtn.addEventListener('click', () => {
+                        adBanner.classList.add('hidden');
+                        try {
+                            localStorage.setItem(AD_CLOSED_KEY, 'true');
+                        } catch (e) { console.warn('localStorage access error.'); }
+                    });
+                }
+            }
+
+        }); // End DOMContentLoaded
+    </script>
+
+</body>
+</html>
